@@ -1,0 +1,177 @@
+
+
+
+
+
+
+/* Login */
+body{
+   display: block;
+    margin: 70px;
+}
+
+#form-login{
+   max-width: 960px;
+   margin: 0px auto;
+   background-color: #d9263c;
+   width: 30rem;
+   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+   border: 0.1rem solid rgba(0, 0, 0, 0.2);
+   border-radius: .5rem;
+   padding: 10px 20px;
+   text-align: center;
+}
+.logo-login {
+   display: inline-block;
+   padding:20px 20px;
+}
+.logo-login img {
+   text-align: center;
+
+}
+/* .login-container  {
+
+
+
+
+} */
+
+.login-container form h3 {
+   padding-bottom: 1rem;
+   font-size: 30px;
+   text-transform: uppercase;
+   color: #130f40;
+}
+
+.login-container form .box {
+   margin: .7rem 0;
+   border-radius: .5rem;
+   padding: 10px 10px;
+   padding-bottom: 10px;
+   font-size: 20px;
+   text-transform: none;
+   width: 100%;
+   border-color:black;
+}
+.login-container form .box::placeholder {
+   font-size: 15px;
+   color: #130f40;
+   text-transform: none;
+   margin: 0px 0px;
+}
+.login-container form .option-other {
+   padding-top: 5px ;
+   display: flex;
+   justify-content: space-between;
+   font-size: 18px;
+
+}
+
+.login-container form .option-other a {
+   color: #130f40;
+}
+
+.login-container form .option-other a:hover {
+   color: #130f40a2;
+}
+
+
+.btn {
+   display: inline-block;
+   margin-top: 1rem;
+   background-color:#409eff;
+   cursor: pointer;
+   color: var(--white);
+   font-size: 23px;
+   padding: 10px 10px;
+   margin: 1rem 0;
+   width: 100%;
+   text-align: center;
+   border-radius: .5rem;
+
+}
+
+.btn:hover {
+   /* color: #130f40a2; */
+   /* background-color:bisque ; */
+   opacity: 0.9;
+}
+
+
+.login-container form p {
+   padding-top: 1rem;
+   font-size: 1.5rem;
+   color: #666;
+}
+
+.login-container form p a {
+   color:var(--main-color);
+}
+
+.login-container form p a:hover {
+   color: #130f40;
+   text-decoration: underline;
+}
+
+
+
+.error_login{
+   text-align: left;
+   padding: 0px;
+   color: yellow;
+   font-style: italic;
+   font-weight: 200;
+   font-size: 15px;
+   display: block;
+}
+
+.congratulation{
+   text-align: left;
+   padding: 0px;
+   color:green;
+   font-style: italic;
+   font-weight: 200;
+   font-size: 15px;
+   display: block;
+}
+
+.option-login a{
+   color: #130f40;
+   text-align: center;
+
+}
+.option-login a:hover{
+   color: #130f40a2;
+
+}
+.google-login {
+   padding: 2px 2px;
+}
+.google-login span::before{
+   content: '\f1a0';
+   font-family: 'FontAwesome';
+   top: 10px;
+   left: 0;
+   padding-left: 5px;
+   padding-right: 5px;
+
+
+}
+.google-login span {
+   font-size: 20px;
+}
+
+@media (max-width:1200px) {
+
+body{
+   margin-left: 0px;
+   margin-right: 0px;
+}
+   #form-login{
+
+      width: 800px;
+      overflow:hidden;
+      }
+}
+

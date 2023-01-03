@@ -1,0 +1,202 @@
+
+
+
+
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 6.5rem;
+}
+
+/* END */
+section {
+   padding: 3rem 2rem;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.heading {
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.heading img {
+   height: 4rem;
+   margin-bottom: 1rem;
+}
+
+.heading h3 {
+   text-align: center;
+   font-size: 4rem;
+   color: var(--black);
+   font-family: 'Merienda One', cursive;
+}
+
+.btn {
+   display: inline-block;
+   margin-top: 1rem;
+   background-color: var(--main-color);
+   cursor: pointer;
+   color: var(--white);
+   font-size: 1.8rem;
+   padding: 1rem 3rem;
+}
+
+.btn:hover {
+   background-color: var(--black);
+}
+
+
+
+/* Login */
+
+#form-login{
+   height: 100%;
+background-color: rgb(79, 163, 39);
+
+}
+.login-form-container {
+   text-align: center;
+   min-height: auto;
+   display:  flex;
+   justify-content:center;
+
+}
+
+.login-form-container form {
+   background-color: #fff;
+ width: 40rem;
+   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+   border: 0.1rem solid rgba(0, 0, 0, 0.2);
+   padding: 2rem 2rem;
+   border-radius: .5rem;
+margin: 100px 100px ;
+
+}
+
+.login-form-container form h3 {
+   padding-bottom: 1rem;
+   font-size: 2.5rem;
+   text-transform: uppercase;
+   color: #130f40;
+}
+
+.login-form-container form .box {
+   margin: .7rem 0;
+   border-radius: .5rem;
+   background: #f7f7f7;
+   padding: 1rem 1.2rem;
+   font-size: 1.6rem;
+   color: #130f40;
+   text-transform: none;
+   width: 100%;
+}
+
+.login-form-container form .remember {
+   padding: 1rem 0;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   gap: .5rem;
+}
+
+.login-form-container form .remember label {
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: #666;
+}
+
+.login-form-container form .btn {
+   margin: 1rem 0;
+   width: 100%;
+   text-align: center;
+     background-color: rgb(79, 163, 39);
+}
+
+.login-form-container form p {
+   padding-top: 1rem;
+   font-size: 1.5rem;
+   color: #666;
+}
+
+.login-form-container form p a {
+   color:var(--main-color);
+}
+
+.login-form-container form p a:hover {
+   color: #130f40;
+   text-decoration: underline;
+}
+
+
+
+
+
+.error{
+   text-align:center;
+   padding: 0px;
+   font-size: 1.3rem;
+}
+
+
+
+
+
+
+@media (max-width:991px) {
+
+   html {
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:745px) {
+   .login-form-container form {
+     
+     left :35rem;
+     top:10rem;
+   }
+
+}
+@media (max-width:600px) {
+   .login-form-container form {
+     
+     left :15rem;
+     top:10rem;
+   }
+   
+}
+@media (max-width:500px) {
+   .login-form-container form {
+     
+     left :5rem;
+     top:10rem;
+   }
+   
+}
+@media (max-height:482px) {
+
+   html {
+      font-size: 50%;
+   }
+
+   .heading img {
+      height: 3rem;
+   }
+
+   .heading h3 {
+      font-size: 3rem;
+   }
+   .login-form-container form {
+     
+      left :20rem;
+      right: 12rem;
+      top:2rem;
+    }
+}

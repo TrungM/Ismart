@@ -1,0 +1,180 @@
+
+/* sigin */
+body{
+   display: block;
+    margin: 70px;
+}
+
+#form-sigin{
+   max-width: 960px;
+   margin: 0px auto;
+   background-color: #d9263c;
+   width: 40rem;
+   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+   border: 0.1rem solid rgba(0, 0, 0, 0.2);
+   border-radius: .5rem;
+   padding: 10px 20px;
+   text-align: center;
+}
+.logo-sigin {
+   display: inline-block;
+   padding:20px 20px;
+   
+}
+.logo-sigin img {
+   text-align: center;
+
+}
+/* .sigin-container  {
+
+
+
+
+} */
+
+.sigin-container form h3 {
+   padding-bottom: 1rem;
+   font-size: 30px;
+   text-transform: uppercase;
+   color: #130f40;
+   text-align: center;
+}
+
+.sigin-container form .box {
+   margin: .7rem 0;
+   border-radius: .5rem;
+   padding: 10px 10px;
+   padding-bottom: 10px;
+   font-size: 20px;
+   text-transform: none;
+   width: 100%;
+   border-color:black;
+}
+.sigin-container form .box::placeholder {
+   font-size: 15px;
+   color: #130f40;
+   text-transform: none;
+   margin: 0px 0px;
+}
+.sigin-container form .box_1::placeholder {
+   font-size: 15px;
+   color: #130f40;
+   text-transform: none;
+   margin: 0px 0px;
+}
+.sigin-container form .option-other {
+   padding-top: 5px ;
+   display: flex;
+   justify-content: space-between;
+   font-size: 18px;
+
+}
+
+.sigin-container form .option-other a {
+   color: #130f40;
+}
+
+.sigin-container form .option-other a:hover {
+   color: #130f40a2;
+}
+
+
+.btn {
+   display: inline-block;
+   margin-top: 1rem;
+   background-color:#409eff;
+   cursor: pointer;
+   color: var(--white);
+   font-size: 23px;
+   padding: 10px 10px;
+   margin: 1rem 0;
+   width: 100%;
+   text-align: center;
+   border-radius: .5rem;
+
+}
+
+.btn:hover {
+   /* color: #130f40a2; */
+   /* background-color:bisque ; */
+   opacity: 0.9;
+}
+
+
+.sigin-container form p {
+   padding-top: 1rem;
+   font-size: 1.5rem;
+   color: #666;
+}
+
+.sigin-container form p a {
+   color:var(--main-color);
+}
+
+.sigin-container form p a:hover {
+   color: #130f40;
+   text-decoration: underline;
+}
+.form-control  {
+   display: flex;
+   justify-content: space-between;
+   
+}
+
+.form-control  .box_1 {
+   margin: .7rem 0;
+   border-radius: .5rem;
+   padding: 10px 10px;
+   padding-bottom: 10px;
+   font-size: 20px;
+   text-transform: none;
+   width: 100%;
+   border-color:black;
+   display: inline-block;
+}
+
+.form-control  .box_1:first-child {
+   margin-right: 20px;
+
+}
+
+
+.error_sign{
+   text-align: left;
+   padding: 0px;
+   color: yellow;
+   font-style: italic;
+   font-weight: 200;
+   font-size: 15px;
+   display: block;
+}
+
+.congratulation{
+   text-align: left;
+   padding: 0px;
+   color:green;
+   font-style: italic;
+   font-weight: 200;
+   font-size: 15px;
+   display: block;
+}
+
+@media (max-width:1200px) {
+
+body{
+   margin-left: 0px;
+   margin-right: 0px;
+}
+   #form-sigin{
+
+      width: 800px;
+      overflow:hidden;
+      }
+
+      .form-control  {
+       display: block;;
+         
+      }
+}
+
