@@ -61,7 +61,7 @@ function indexAction(){
                                                   $error["email"]="Không đúng định dạng";
 
                                         }else{
-                                                  $email=$_POST["emaile"];
+                                                  $email=$_POST["email"];
 
                                         }
                               }
