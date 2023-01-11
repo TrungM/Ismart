@@ -231,7 +231,7 @@ function add_orderAction()
     }
 
     if (empty($_POST["method_payment"])) {
-        $error["method_payment"] = "**Vui lòng chọn hình thức thanh toán ";
+        $error["method_payment"] = "**Vui lòng thanh toán trước khi đặt hàng ";
     } else {
         $error["method_payment"] = "";
     }
@@ -253,220 +253,22 @@ function add_orderAction()
 
 
     if ($result["error_fullname"] == "" && $result["error_email"] == "" && $result["error_phone"] == "" && $result["error_province"] == "" && $result["error_towns"] == "" && $result["error_district"] == "" && $result["error_number_address"] == "" && $result["error_method"] == "" &&   $result["error_method_payment"] == "") {
-        $_SESSION["shipping_id"] = add_order_shipping($fullname,  $email, $province, $district, $towns, $number_address, $phone, $note, $method_payment);
-        if (isset($_SESSION["email"])) {
-            $_SESSION["customer_id"] = customer_id();
-        } else {
-            $_SESSION["customer_id"] = null;
-        }
-        $_SESSION["order_code"] = substr(md5(microtime()), random_int(0, 26), 5);
-        $_SESSION["order_id"] = add_order($_SESSION["order_code"], $method);
-        add_order_detail();
+        // $_SESSION["shipping_id"] = add_order_shipping($fullname,  $email, $province, $district, $towns, $number_address, $phone, $note, $method_payment);
+        // if (isset($_SESSION["email"])) {
+        //     $_SESSION["customer_id"] = customer_id();
+        // } else {
+        //     $_SESSION["customer_id"] = null;
+        // }
+        // $_SESSION["order_code"] = substr(md5(microtime()), random_int(0, 26), 5);
+        // $_SESSION["order_id"] = add_order($_SESSION["order_code"], $method);
+        // add_order_detail();
+
+        $result["congra"] = "Đặt hàng thành công "; 
+        // $result["link_payment"] = "?mod=checkout&controller=index&action=payment"; 
 
 
-
-
-
-
-
-
-
-
-
-        $title = "Xác nhận thông tin đơn hàng từ Ismart ";
-        $content = '
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-              <meta charset="UTF-8">
-              <meta http-equiv="X-UA-Compatible" content="IE=edge">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Document</title>
-              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    </head>
-    
-    <body>
-              <div id="wrapper">
-                        <div class="container">
-                                  <div id="header">
-                                            <div class="header_title">
-                                                      <h2>Xác nhận thanh toán</h2>
-    
-                                            </div>
-                                            <div>
-    
-                                                  
-                                                      <div class="order_code">
-                                                                <h3 style="color: brown; font-family:"Courier New", Courier, monospace" > Mã số đơn hàng: ' . $_SESSION["order_code"] . '</h3>
-    
-                                                      </div>
-                                            </div>
-    
-    
-                                  </div>
-                                  <div id="content">
-    
-                                            <div class="content_title">
-                                                      <p>Kính chào quý khách: <span style="font-weight: boild;">' . $fullname . '</span>
-                                                      </p>
-    
-                                                      <p>Đơn hàng <span style="font-weight: boild;">' . $_SESSION["order_code"] . '</span>  của Quý khách tại
-                                                                <span class="bold_css">Ismart</span> đã được đặt hàng thành công
-                                                      </p>
-    
-                                            </div>
-    
-                                            <div class="detail_order">
-    
-                                                      <h3>Chi tiết đơn hàng </h3>
-                                                      <table class="table table-bordered " border="2">
-                                                                <thead>
-                                                                  <tr>
-                                                                          <th>Tên sản phẩm </th>
-                                                                          <th>Đơn giá </th>
-                                                                          <th>Số lượng </th>
-                                                                          <th>Thành tiền </th>
-                                                                  </tr>
-                                                                </thead>
-                                                                <tbody>
-
-                                                             
-
-                                                                
-                                                                
-
-
-                                                                </tbody>
-                                                              </table>
-    
-                                              
-                                                      <div class="detail">
-                                                                <div class="view_detail_price" style="display:flex; justify-content: space-between;">
-                                                                          <div>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Tổng giá trị sản phẩm : </h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Giảm giá : </h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Phí vận chuyển : </h5>
-    
-                                                                          </div>
-    
-                                                                          <div  style="margin-left: 1rem;;">
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">' . $_SESSION["cart"]["infor"]["total"] . "đ" . '</h5>
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">300000</h5>
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">500000</h5>
-                                                                          </div>
-    
-                                                                </div>
-    
-                                                                <div class="view_total"  style="display:flex; justify-content: space-between;">
-                                                                          <div >
-                                                                                    <h3 style="color: red;">Thành tiền :</h3>
-                                                                          </div>
-    
-                                                                          <div  style="margin-left: 4rem;" >
-                                                                                    <h3 style="font-weight: 200; color: red;">' . $_SESSION["cart"]["infor"]["total"] . "đ" . '</h3>
-                                                                                 
-                                                                          </div>
-    
-                                                                </div>
-                                                      </div>
-    
-    
-    
-    
-    
-    
-    
-                                            </div>
-    
-                                            <div class="order_info" style="padding:1rem 0px">
-                                                      <h3>Thông tin đặt hàng</h3>
-                                                      <div class="detail">
-                                                                <div class="order_info_content" style="display:flex">
-                                                                          <div >
-                                                                                    <h5 style="padding: 0.5rem 0px;">Mã đơn hàng của quý khách : </h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;" >Thời gian đặt hàng : </h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Phương thức giao hàng :</h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Phương thức thanh toán :</h5>
-    
-                                                                          </div>
-    
-                                                                          <div style="margin-left: 1rem;">
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">' . $_SESSION["order_code"] . '</h5>
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">' . date("Y/m/d") . '</h5>
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">' . $method . ' </h5>
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">' . $method_payment . '</h5>
-                                                                          </div>
-    
-                                                                </div>
-    
-    
-                                                      </div>
-    
-                                            </div>
-    
-    
-                                            <div class="order_shipping" style="padding:1rem 0px">
-                                                      <h3>Địa chỉ giao hàng </h3>
-                                                      <div class="detail">
-                                                                <div class="order_shipping_content" style="display:flex">
-                                                                          <div>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Tên người nhận : </h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Địa chỉ nhận hàng : </h5>
-                                                                                    <h5 style="padding: 0.5rem 0px;">Số điện thoại liên hệ : </h5>
-    
-                                                                          </div>
-    
-                                                                          <div style="margin-left: 1rem;;">
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">' . $fullname . '</h5>
-                                                                                    <h5 style="font-weight: 200; padding: 0.5rem 0px;">
-                                                                                            
-                                                                                    <h5 style="font-weight: 200;padding: 0.5rem 0px;">' . $phone . '</h5>
-                                                                          </div>
-    
-                                                                </div>
-    
-    
-                                                      </div>
-    
-                                            </div>
-    
-    
-    
-    
-    
-    
-                                  </div>
-    
-                                  <div id="footer">
-                                            <p>
-                                                      Mọi thắc mắc và góp ý, xin Quý khách vui lòng liên hệ với chúng tôi
-                                                      qua:
-                                            </p>
-                                            <p>
-                                                      Email hỗ trợ: <a href=""></a>
-                                            </p>
-                                            <p>
-                                                      Số hotline: 0966 158 666
-                                            </p>
-                                            <p> Ismart Trân trọng cảm ơn và rất hân hạnh được phục vụ Quý khách.</p>
-    
-    
-    
-    
-    
-    
-    
-                                            </p>
-                                  </div>
-                        </div>
-              </div>
-    </body>
-    
-    </html>';
-        echo send_mail($email, $fullname, $title, $content);
-        $result["congra"] = "Đặt hàng thành công ";
     }
+
     echo json_encode($result);
 }
 
@@ -483,5 +285,34 @@ function ActionAction()
         echo '    <td> ' . $p["product_price"] * $p["qty"] . ' </td>
              </tr>';
         echo "</pre>";
+    }
+}
+
+function  Momo_paymentAction(){
+
+    load_view("momo_payment");
+}
+
+// function  TestAction(){
+
+//     load_view("test");
+// }
+
+
+// function  TestATMAction(){
+
+//     load_view("testATM");
+// }
+
+
+function paymentAction(){
+    $_POST["momo"]="Momo";
+    $pay_value = $_POST["momo"];
+    if(isset($pay_value)){
+        updatePayement( $pay_value);
+        load_view("payment");
+    }else{
+        load_view("payment");
+
     }
 }

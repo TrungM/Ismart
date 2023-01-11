@@ -123,4 +123,24 @@ function get_list_cart(){
 
 
 
+              function updatePayement($pay_value){
+
+                  if(isset($_SESSION["shipping_id"])){
+                        $result = db_update("tb_shipping",array(
+
+                              "shipping_payment"=>   $pay_value,
+      
+                        ),"`shipping_id`=$_SESSION[shipping_id] ");
+          
+                    return $result;
+                  }else{
+                        return false;
+                  }
+
+
+   
+              }
+
+
+
 ?>

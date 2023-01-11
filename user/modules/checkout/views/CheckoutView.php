@@ -8,27 +8,33 @@
     .error_province,
     .error_towns,
     .error_district,
-    .error_number_address,.error_method,#not_product,.error_method_payment {
+    .error_number_address,
+    .error_method,
+    #not_product,
+    .error_method_payment {
         color: red;
         font-style: italic;
     }
-.success_order{
-    color:green;
-}
 
-#not_product{
-    padding: 3px 3px;
-    text-align: center;
-    font-weight: 500;
+    .success_order {
+        color: green;
+    }
 
-};
+    #not_product {
+        padding: 3px 3px;
+        text-align: center;
+        font-weight: 500;
 
-.error_method_payment{
-    padding: 20px 20px;
+    }
 
-    margin-top: 50px;
+    ;
 
-}
+    .error_method_payment {
+        padding: 20px 20px;
+
+        margin-top: 50px;
+
+    }
 
     /* .error::before{
      content: "**";
@@ -52,6 +58,8 @@
                 </div>
             </div>
         </div>
+
+
         <form action="" method="Post">
             <div id="wrapper" class="wp-inner clearfix">
                 <div class="section" id="customer-info-wp">
@@ -93,7 +101,9 @@
                         <div class="form-row clearfix">
                             <div class="form-col fl-left">
                                 <label for="phone">Số điện thoại</label>
-                                <input type="tel" name="phone" id="phone" value="<?php  if(isset($_SESSION["phone"])){echo $_SESSION["phone"];}?>">
+                                <input type="tel" name="phone" id="phone" value="<?php if (isset($_SESSION["phone"])) {
+                                                                                        echo $_SESSION["phone"];
+                                                                                    } ?>">
                                 <!-- <span class="error"> <?php echo error_fn("phone") ?></span> -->
                                 <span class="error_phone"></span>
 
@@ -102,7 +112,7 @@
                             <div class="form-col fl-right">
                                 <label for="">Hình thức nhận hàng</label>
                                 <select name="" id="method_product" style="width: 100%;padding:8px 12px;border: 1px solid #cccccc">
-                                <option value="">--Chọn hình thức--</option>
+                                    <option value="">--Chọn hình thức--</option>
                                     <option value="Nhận hàng tại nhà">Nhận hàng tại nhà</option>
                                     <option value="Nhận hàng tại cửa hàng">Nhận hàng tại cửa hàng</option>
                                 </select>
@@ -132,7 +142,7 @@
                                 <div class="form-col ">
                                     <label for="address" style="padding-top:10px;">Quận</label>
                                     <select name="" id="district" style="width: 100%;padding:8px 12px;border: 1px solid #cccccc">
-                                        <option value="Không có giá trị" > Chọn quận/huyện</option>
+                                        <option value="Không có giá trị"> Chọn quận/huyện</option>
                                     </select>
                                     <span class="error_district"></span>
 
@@ -141,7 +151,7 @@
                                 <div class="form-col ">
                                     <label for="address" style="padding-top:10px;">Huyện</label>
                                     <select name="" id="towns" style="width: 100%;padding:8px 12px;border: 1px solid #cccccc">
-                                    <option value="Không có giá trị"> Chọn phường/xã </option>
+                                        <option value="Không có giá trị"> Chọn phường/xã </option>
                                     </select>
                                     <span class="error_towns"></span>
 
@@ -162,41 +172,37 @@
 
                     </div>
                     <div id="section-payment">
-                <div class="section-head">
-                        <h1 class="section-title">Hình thức thanh toán</h1>
-
-                        <input type="hidden" class="method_payment" >
-                    </div>
-                    <div><span class="error_method_payment"></span></div> 
+                            <input type="hidden" class="method_payment"  value="Chưa có giá trị">
+                        <!-- <div><span class="error_method_payment"></span></div>
                         <div id="payment">
-              
+
                             <div class="payment_paypal">
                                 <div class="radio_payment_paypal">
-                                <input type="radio" name="payment_option" id="paypal" value="Paypal">
+                                    <input type="radio" name="payment_option" id="paypal" value="Paypal">
                                 </div>
                                 <div class="payment_title_paypal">
-                                <img src="public/images/paypal.png" alt="">
-                                <span>Thanh toán bằng Paypal</span>
+                                    <img src="public/images/paypal.png" alt="">
+                                    <span>Thanh toán bằng Paypal</span>
                                 </div>
                             </div>
 
 
                             <div class="payment_momo">
                                 <div class="radio_payment_momo">
-                                <input type="radio" name="payment_option" id="momo" value="Momo">
+                                    <input type="radio" name="payment_option" id="momo" value="Momo">
                                 </div>
                                 <div class="payment_title_momo">
-                                <img src="public/images/momo.png" alt="" >
-                                <span>Thanh toán bằng Momo</span>
+                                    <img src="public/images/momo.png" alt="">
+                                    <span>Thanh toán bằng Momo</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
 
-                </div>
+                    </div>
 
 
-                <!-- <div id="paypal-button-container"></div> -->
+                    <!-- <div id="paypal-button-container"></div> -->
 
                 </div>
                 <div class="section" id="order-review-wp">
@@ -231,23 +237,25 @@
                                     <td><strong class="total-price"> <?php
                                                                         if (isset($_SESSION["cart"]["infor"])) {
                                                                             echo number_format($_SESSION["cart"]["infor"]["total"]) . "đ";
-                                                                            ?>
-                                                                                <input type="hidden" name="" id="total_input" value="<?php echo round ( $_SESSION["cart"]["infor"]["total"]/23755)?>">
+                                                                        ?>
+                                                <input type="hidden" name="" id="total_input" value="<?php echo round($_SESSION["cart"]["infor"]["total"] / 23755) ?>">
 
-                                                                            <?php
+                                            <?php
                                                                         } else {
                                                                             echo "0";
                                                                         }
 
-                                                                        ?></strong></td>
+                                            ?></strong></td>
                                 </tr>
                             </tfoot>
                         </table>
-                      
+
 
                         <div class="place-order-wp clearfix">
                             <input type="button" id="order-now" name="order-now" value="Đặt hàng">
                             <!-- <input type="submit" name="order_2" value="Mẫu"> -->
+
+
                         </div>
                     </div>
                 </div>
@@ -262,7 +270,7 @@
 } else {
 ?>
 
-<div id="main-content-wp" class="checkout-page">
+    <div id="main-content-wp" class="checkout-page">
         <div class="section" id="breadcrumb-wp">
             <div class="wp-inner">
                 <div class="section-detail">
@@ -278,7 +286,7 @@
             </div>
         </div>
         <div id="not_product">
-        <p>Không có sản phẩm </p>
+            <p>Không có sản phẩm </p>
 
         </div>
 
@@ -335,25 +343,25 @@
 
             if (method == "Nhận hàng tại cửa hàng") {
                 $("#address-payment").hide();
-                var province = $("#province option:first").attr("selected","selected");
-                var province = $("#province option:first").attr("value","Không có giá trị");
-            var district = $("#district option:first").attr("selected","selected");
-            var district = $("#district option:first").attr("value","Không có giá trị");
-            var towns = $("#towns option:first").attr("selected","selected");
-            var towns = $("#towns option:first").attr("value","Không có giá trị");
-            var number_address = $("#number_address").attr("value","Không có giá trị");
+                var province = $("#province option:first").attr("selected", "selected");
+                var province = $("#province option:first").attr("value", "Không có giá trị");
+                var district = $("#district option:first").attr("selected", "selected");
+                var district = $("#district option:first").attr("value", "Không có giá trị");
+                var towns = $("#towns option:first").attr("selected", "selected");
+                var towns = $("#towns option:first").attr("value", "Không có giá trị");
+                var number_address = $("#number_address").attr("value", "Không có giá trị");
 
 
             } else if (method == "Nhận hàng tại nhà") {
                 $("#address-payment").show();
 
-                var province = $("#province option:first").removeAttr("selected","selected");
-                var province = $("#province option:first").attr("value","");
-            var district = $("#district option:first").removeAttr("selected","selected");
-            var district = $("#district option:first").attr("value","");
-            var towns = $("#towns option:first").removeAttr("selected","selected");
-            var towns = $("#towns option:first").attr("value","");
-            var number_address = $("#number_address").removeAttr("value","Không có giá trị");
+                var province = $("#province option:first").removeAttr("selected", "selected");
+                var province = $("#province option:first").attr("value", "");
+                var district = $("#district option:first").removeAttr("selected", "selected");
+                var district = $("#district option:first").attr("value", "");
+                var towns = $("#towns option:first").removeAttr("selected", "selected");
+                var towns = $("#towns option:first").attr("value", "");
+                var number_address = $("#number_address").removeAttr("value", "Không có giá trị");
 
             }
 
@@ -405,35 +413,54 @@
 
 
 
-        $(".payment_paypal").on("click", function() {
-            var paypal = $("#paypal").val();
+        // $(".payment_paypal").on("click", function() {
+        //     var paypal = $("#paypal").val();
 
-           $ (".payment_title_paypal").addClass("border-click");
-           $ (".method_payment").attr("value",paypal);
-           $ (".payment_title_momo").removeClass("border-click");
-           alert(paypal);
+        //     $(".payment_title_paypal").addClass("border-click");
+        //     $(".method_payment").attr("value", paypal);
+        //     $(".payment_title_momo").removeClass("border-click");
+        //     //    alert(paypal);
 
-        
-        
-        })
 
-        $(".payment_momo").on("click", function() {
-            var momo = $("#momo").val();
-            $ (".payment_title_momo").addClass("border-click");
-            $ (".method_payment").attr("value",momo);
-            $ (".payment_title_paypal").removeClass("border-click");
 
-            alert(momo);
-        
-        
-        })
+        // })
+
+        // $(".payment_momo").on("click", function() {
+        //     var momo = $("#momo").val();
+        //     $(".payment_title_momo").addClass("border-click");
+        //     $(".method_payment").attr("value", momo);
+        //     $(".payment_title_paypal").removeClass("border-click");
+        //     // window.location.assign("?mod=checkout&controller=index&action=Momo_payment")
+        //     // var getUrlParameter = function getUrlParameter(sParam) {
+        //     //     var sPageURL = window.location.search.substring(1),
+        //     //  sURLVariables = sPageURL.split('&'),
+        //     //         sParameterName,
+        //     //         i;
+
+        //     //     for (i = 0; i < sURLVariables.length; i++) {
+        //     //         sParameterName = sURLVariables[i].split('=');
+
+        //     //         if (sParameterName[0] === sParam) {
+        //     //             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        //     //         }
+        //     //     }
+        //     // };
+
+        //     // var tech = getUrlParameter('partnerCode');
+
+        //     // alert(tech);
+
+
+
+        // })
+
 
 
 
 
 
         $("#order-now").on("click", function(e) {
-  
+
             var fullname = $("#fullname").val();
             var email = $("#email").val();
             var phone = $("#phone").val();
@@ -454,10 +481,11 @@
                 district: district,
                 towns: towns,
                 number_address: number_address,
-                note:note,
-                method:method,
+                note: note,
+                method: method,
                 method_payment,
             };
+
             $.ajax({
                 url: "?mod=checkout&controller=index&action=add_order",
                 method: "POST",
@@ -465,8 +493,7 @@
                 dataType: "json",
 
                 success: function(data) {
-
-                    $(".error_fullname").html(data.error_fullname)
+                        $(".error_fullname").html(data.error_fullname)
                     $(".error_email").html(data.error_email)
                     $(".error_phone").html(data.error_phone)
                     $(".error_province").html(data.error_province)
@@ -475,14 +502,15 @@
                     $(".error_number_address").html(data.error_number_address)
                     $(".error_method").html(data.error_method);
                     $(".error_method_payment").html(data.error_method_payment);
-                    $(".success_order").html(data.congra);
+                    $(".error_method_payment").html(data.error_method_payment);
+                    if( (data.congra)=="Đặt hàng thành công "){
+                        window.location.assign("?mod=checkout&controller=index&action=payment");
 
-                    // location.reload();
+                    }
+                  
 
 
-
-
-
+                      
 
                 },
 
@@ -492,14 +520,8 @@
 
 
 
-     
+
     })
-
-
-
-
-
-
 </script>
 
 
@@ -532,5 +554,5 @@
     //     });
     //   }
     // }).render('#paypal-button-container');
-  </script>
+</script>
 <?php get_footer() ?>
